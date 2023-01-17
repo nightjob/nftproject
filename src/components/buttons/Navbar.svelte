@@ -1,4 +1,6 @@
 <script lang="ts">
+    import account from "../../store/account";
+  import displayEthereumAddres from "../../utils/displayEthereumAddress";
     import ConnectWallet from "./ConnectWallet.svelte";
     </script>
 
@@ -8,7 +10,11 @@
         </div>
 
         <div class="nav-links">
+            {#if $account}
+            {displayEthereumAddres ($account)}
+            {:else}
     <ConnectWallet />
+    {/if}
     </div>
     </nav>
 
