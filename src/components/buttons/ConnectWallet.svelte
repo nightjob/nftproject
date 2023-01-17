@@ -1,6 +1,9 @@
 <script lang="ts">
     import { ethers } from "ethers";
+    import type NFT from "../../domain/nft";
   import account from "../../store/account";
+  import nfts from "../../store/nfts";
+  import fetchNftsByAddress from "../../utils/fetchNftsByAddress";
     type EthereumWindow = {
         ethereum: any; //todo: get rid of any typing
     };
@@ -13,6 +16,9 @@
             const providedAccount = accounts[0];
             // set account into a store, so that we can use it elsewhere
             account.set(providedAccount)
+            const fetchedNfts: NFT[] = await fetchNftsByAddress(providedAccount);
+            console.log("fetched nfts", fetchedNfts);
+            nfts.set(fetchedNfts);
     }
 </script>
 
