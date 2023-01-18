@@ -8,9 +8,10 @@ async function fetchImxNfts(address: string): Promise<NFT[]> {
   const domainNfts: NFT[] = [];
 
   imxNfts.data.result.forEach(function (imxNft) {
+    if (!imxNft.name) return;
     const nft: NFT = {
       name: imxNft.name,
-      description: imxNft.description,
+      description: imxNft.collection.name,
       imageURL: imxNft.image_url,
       nftType: NFTType.IMX,
     };

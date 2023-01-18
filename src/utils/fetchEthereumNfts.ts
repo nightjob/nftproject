@@ -22,6 +22,7 @@ async function fetchEthereumNfts(address: string): Promise<NFT[]> {
   // i want to loop over the response from alchemy and convert each
   // entry into the type I want to use
   nfts.ownedNfts.forEach(function (alchemyNft) {
+    if (!alchemyNft.title) return;
     const media = alchemyNft.media;
     const imageURL = media.length ? media[0].raw : "";
 
