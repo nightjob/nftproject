@@ -1,4 +1,4 @@
-import type NFT from "../domain/nft";
+import type { NFT } from "../domain/nft";
 import fetchEthereumNfts from "./fetchEthereumNfts";
 import fetchImxNfts from "./fetchimxNfts";
 

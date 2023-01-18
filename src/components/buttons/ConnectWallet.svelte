@@ -1,6 +1,6 @@
 <script lang="ts">
     import { ethers } from "ethers";
-    import type NFT from "../../domain/nft";
+    import type { NFT } from "../../domain/nft";
   import account from "../../store/account";
   import nfts from "../../store/nfts";
   import fetchNftsByAddress from "../../utils/fetchNftsByAddress";

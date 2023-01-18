@@ -1,4 +1,4 @@
-import type NFT from "../domain/nft";
+import { NFTType, type NFT } from "../domain/nft";
 import { Network, Alchemy } from "alchemy-sdk";
 async function fetchEthereumNfts(address: string): Promise<NFT[]> {
   const settings = {
@@ -29,6 +29,7 @@ async function fetchEthereumNfts(address: string): Promise<NFT[]> {
       name: alchemyNft.title,
       description: alchemyNft.description,
       imageURL: imageURL,
+      nftType: NFTType.Ethereum,
     };
 
     domainNfts.push(nft);

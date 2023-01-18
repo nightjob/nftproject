@@ -1,7 +1,15 @@
+enum NFTType {
+  Ethereum,
+  IMX,
+  Solana,
+}
+
 type NFT = {
   imageURL: string;
   name: string;
   description: string;
+  nftType: NFTType;
 };
 
-export default NFT;
+export type { NFT };
+export { NFTType };

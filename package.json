@@ -19,6 +19,8 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@imtbl/core-sdk": "^1.0.0",
+    "@imtbl/imx-sdk": "^1.39.1",
     "alchemy-sdk": "^2.3.0",
     "axios": "^1.2.2",
     "ethers": "^5.7.2"
