@@ -31,7 +31,7 @@ justify-content: space-between;
 
 padding: 20px;
 
-background-color: teal;
+background-color: rgb(0, 0, 0);
 
 color: #fff;
 
@@ -65,7 +65,7 @@ font-size: 18px;
 
 .menu li:hover {
 
-background-color: #4c9e9e;
+background-color: #9e4c4c;
 
 border-radius: 5px;
 
