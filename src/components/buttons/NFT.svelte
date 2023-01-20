@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { NFT } from "../../domain/nft";
-  import truncateDescription from "../../utils/truncateDescription";
+  import { truncateDescription } from "../../utils/truncateDescription";
 import parseImageURL from "../../utils/parseImageURL";
 
     export let nft: NFT;

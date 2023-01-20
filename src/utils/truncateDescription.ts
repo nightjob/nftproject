@@ -9,4 +9,4 @@ function truncateDescription(description: string): string {
   return description;
 }
 
-export default { truncateDescription, MAX_DESCRIPTION_LENGTH };
+export { truncateDescription, MAX_DESCRIPTION_LENGTH };
