@@ -25,6 +25,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@gamestopnft/detect-gamestop-provider": "^1.0.0",
     "@imtbl/core-sdk": "^1.0.0",
     "@imtbl/imx-sdk": "^1.39.1",
     "alchemy-sdk": "^2.3.0",
