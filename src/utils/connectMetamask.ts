@@ -1,4 +1,6 @@
 import { ethers } from "ethers";
+import type { Account } from "../domain/account";
+import { AccountType } from "../domain/account";
 import type { NFT } from "../domain/nft";
 import account from "../store/account";
 import nfts from "../store/nfts";
@@ -14,8 +16,12 @@ async function connectMetamask() {
   const accounts = await provider.send("eth_requestAccounts", []);
   const providedAccount = accounts[0];
   // set account into a store, so that we can use it elsewhere
-  account.set(providedAccount);
-  const fetchedNfts: NFT[] = await fetchNftsByAddress(providedAccount);
+  const domainAccount: Account = {
+    address: providedAccount,
+    accountType: AccountType.Ethereum,
+  };
+  account.set(domainAccount);
+  const fetchedNfts: NFT[] = await fetchNftsByAddress(domainAccount);
   console.log("fetched nfts", fetchedNfts);
   nfts.set(fetchedNfts);
 }

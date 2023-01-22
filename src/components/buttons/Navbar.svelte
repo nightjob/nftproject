@@ -11,7 +11,7 @@
 
         <div class="nav-links">
             {#if $account}
-            {displayEthereumAddres ($account)}
+            {displayEthereumAddres ($account.address)}
             {:else}
     <ConnectWallet />
     {/if}

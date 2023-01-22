@@ -4,6 +4,8 @@ import account from "../store/account";
 import nfts from "../store/nfts";
 import fetchNftsByAddress from "./fetchNftsByAddress";
 import detectGamestopProvider from "@gamestopnft/detect-gamestop-provider";
+import type { Account } from "../domain/account";
+import { AccountType } from "../domain/account";
 
 async function connectGME() {
   const gmeProvider = await detectGamestopProvider();
@@ -12,8 +14,12 @@ async function connectGME() {
   const accounts = await provider.send("eth_requestAccounts", []);
   const providedAccount = accounts[0];
   // set account into a store, so that we can use it elsewhere
-  account.set(providedAccount);
-  const fetchedNfts: NFT[] = await fetchNftsByAddress(providedAccount);
+  const domainAccount: Account = {
+    address: providedAccount,
+    accountType: AccountType.Ethereum,
+  };
+  account.set(domainAccount);
+  const fetchedNfts: NFT[] = await fetchNftsByAddress(domainAccount);
   console.log("fetched nfts", fetchedNfts);
   nfts.set(fetchedNfts);
 }

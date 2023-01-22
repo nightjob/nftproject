@@ -28,3 +28,7 @@ Hard Requirements:
 6. It is NOT allowed to use any or unknown typings. Everything must have a type, and be type-safe.
 
 7. IT should have responsive deisgn, work well on any device, and look MODERN and GREAT! This is a portfolio piece, really do the CSS part amazingly.
+
+8. If user does not have a wallet, the links to connect should lead to a link to download the wallet.
+
+9. landing page should be informative and unique.

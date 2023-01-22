@@ -2,7 +2,7 @@ import { NFTType, type NFT } from "../domain/nft";
 import { Network, Alchemy } from "alchemy-sdk";
 async function fetchEthereumNfts(address: string): Promise<NFT[]> {
   const settings = {
-    apiKey: "eqVlGAkmbuEJsJ_9jR5c9RAsVA8yYRBy", //TOOO: Move to env file, so its not commited to git. this is insecure.
+    apiKey: import.meta.env.VITE_ALCHEMY_API_KEY, //TOOO: Move to env file, so its not commited to git. this is insecure.
     network: Network.ETH_MAINNET, // replace my network
   };
 
