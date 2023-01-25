@@ -16,10 +16,10 @@ onMount(async () => {
     isMetamaskInstalled = true;
   }
 
-  const phantom = (window as any as EthereumWindow).solana.phantom;
-  if (phantom) {
-    isPhantomInstalled = true;
-  }
+  // const phantom = (window as any as EthereumWindow).solana.phantom;
+  // if (phantom) {
+  //   isPhantomInstalled = true;
+  // }
 
   const gmeProvider = await detectGamestopProvider();
   if (gmeProvider) {
@@ -43,11 +43,11 @@ onMount(async () => {
         const gamestopInstallUrl = "https://chrome.google.com/webstore/detail/gamestop-wallet/pkkjjapmlcncipeecdmlhaipahfdphkd?hl=en";
         window.open(gamestopInstallUrl, "_blank");
       }
-    } else if (walletType === "phantom") {
-      if(!isPhantomInstalled) {
-        const phantomInstallUrl = "https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa?hl=en";
-        window.open(phantomInstallUrl, "_blank");
-      }
+    // } else if (walletType === "phantom") {
+    //   if(!isPhantomInstalled) {
+    //     const phantomInstallUrl = "https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa?hl=en";
+    //     window.open(phantomInstallUrl, "_blank");
+    //   }
     }
 await fn();
   }
@@ -67,13 +67,13 @@ Install Metamask
   Install GameStop
   {/if}
 </button>
-<button class="phantomb" on:click={async () => await connect("phantom", connectPhantom)}>
-  {#if isPhantomInstalled}
-  Connect Phantom
-  {:else}
-  Install Phantom
-  {/if}
-</button>
+<!-- <button class="phantomb" on:click={async () => await connect("phantom", connectPhantom)}>
+{#if isPhantomInstalled}
+Connect Phantom
+{:else}
+Install Phantom
+{/if}
+</button> -->
 
 <style>
   /* .metamaskb {
